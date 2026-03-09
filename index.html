@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile POS System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadData()">
+
+    <header>
+        <div><strong>STORE POS</strong></div>
+        <button class="settings-btn" onclick="toggleModal()">⚙️ Settings</button>
+    </header>
+
+    <div id="setupModal">
+        <div class="modal-content">
+            <h3>Product Setup</h3>
+            <input id="productName" placeholder="Item Name">
+            <input id="productPrice" type="number" inputmode="decimal" placeholder="Price">
+            <button onclick="addProduct()" class="btn-primary">Add to Menu</button>
+
+            <h4 style="margin-top:25px;">Current Menu</h4>
+            <div id="modalProductList"></div>
+
+            <button onclick="toggleModal()" style="width: 100%; margin-top: 20px; background: #eee;">Close</button>
+        </div>
+    </div>
+
+    <main>
+        <div id="moneyPool">Pool: P0.00</div>
+
+        <button onclick="newOrder()" class="new-order-btn">+ New Order</button>
+
+        <h3>Menu</h3>
+        <div id="productList" class="product-grid"></div>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ccc;">
+
+        <h3>Current Orders</h3>
+        <div id="orders"></div>
+
+        <button onclick="toggleHistory()" class="history-toggle">View Sales History</button>
+
+        <div id="historyPage" style="display:none; margin-top: 20px;">
+            <h3>Receipt History</h3>
+            <div id="historyList"></div>
+            <button onclick="unlockHistory()"
+                style="background:none; color:gray; font-size: 0.8rem; margin-top: 20px;">Admin Access</button>
+            <button id="clearBtn" onclick="clearHistory()"
+                style="display:none; background:var(--danger); color:white; width: 100%; margin-top: 10px;">Clear
+                Data</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
