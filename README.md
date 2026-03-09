@@ -1,2 +1,8 @@
 # POS_nuevaorlanda
 this is a POS that I have personally made
+__________________
+|                |
+| made with love |
+|                |
+___________________
+
